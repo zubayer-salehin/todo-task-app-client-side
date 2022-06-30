@@ -8,7 +8,7 @@ const CompleteTask = () => {
     const [completeTaskdeletecount, setCompleteTaskdeletecount] = useState(0);
 
     useEffect(() => {
-        fetch("http://localhost:5000/allCompleteTask")
+        fetch("https://stormy-dawn-97117.herokuapp.com/allCompleteTask")
             .then(response => response.json())
             .then(data => {
                 setCompleteTasks(data);
@@ -16,7 +16,7 @@ const CompleteTask = () => {
     }, [completeTaskdeletecount])
 
     const handleTaskDelete = (id) => {
-        fetch(`http://localhost:5000/deleteCompleteTask/${id}`, {
+        fetch(`https://stormy-dawn-97117.herokuapp.com/deleteCompleteTask/${id}`, {
             method: 'DELETE'
         })
             .then(response => response.json())
@@ -32,7 +32,7 @@ const CompleteTask = () => {
         <div className='text-center'>
             <h2 className='text-2xl font-medium mt-8 mb-6'>Completed Task</h2>
             <ul className='flex justify-center'>
-                <div className="sm:w-4/12 overflow-x-auto">
+                <div className="sm:w-4/12  overflow-x-auto">
                     <table className="table w-full">
                         <thead>
                             <tr>

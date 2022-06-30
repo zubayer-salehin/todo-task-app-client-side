@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import SingleTask from './SingleTask';
 import { toast } from 'react-toastify';
+import Footer from './Footer';
 
 
 const AddTask = () => {
@@ -13,7 +14,7 @@ const AddTask = () => {
     const [editTask, setEditTask] = useState("");
 
     useEffect(() => {
-        fetch("http://localhost:5000/allTask")
+        fetch("https://stormy-dawn-97117.herokuapp.com/allTask")
             .then(response => response.json())
             .then(data => {
                 setTasks(data);
@@ -24,7 +25,7 @@ const AddTask = () => {
         e.preventDefault();
         const task = e.target.task.value;
         if (task) {
-            fetch("http://localhost:5000/addTask", {
+            fetch("https://stormy-dawn-97117.herokuapp.com/addTask", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -43,7 +44,7 @@ const AddTask = () => {
     }
 
     const handleTaskDelete = (id) => {
-        fetch(`http://localhost:5000/deleteTask/${id}`, {
+        fetch(`https://stormy-dawn-97117.herokuapp.com/deleteTask/${id}`, {
             method: 'DELETE'
         })
             .then(response => response.json())
@@ -59,7 +60,7 @@ const AddTask = () => {
         const task = { task: editTask };
 
         if (editTask) {
-            fetch(`http://localhost:5000/taskEdit/${id}`, {
+            fetch(`https://stormy-dawn-97117.herokuapp.com/taskEdit/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -79,7 +80,7 @@ const AddTask = () => {
         const id = t?._id;
         const task = { task: t?.task }
 
-        fetch("http://localhost:5000/completeTask", {
+        fetch("https://stormy-dawn-97117.herokuapp.com/completeTask", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -92,7 +93,7 @@ const AddTask = () => {
                 toast.success("Task completed");
             })
 
-        fetch(`http://localhost:5000/deleteTask/${id}`, {
+        fetch(`https://stormy-dawn-97117.herokuapp.com/deleteTask/${id}`, {
             method: 'DELETE'
         })
             .then(response => response.json())
