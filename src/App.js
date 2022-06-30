@@ -19,7 +19,7 @@ function App() {
         <Route path="/completeTask" element={<CompleteTask />} />
         <Route path="/calender" element={<Calender />} />
       </Routes>
-      <ToastContainer></ToastContainer>
+      <ToastContainer autoClose={2000}></ToastContainer>
       <Footer></Footer>
     </div>
   );
