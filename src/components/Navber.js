@@ -5,9 +5,9 @@ import CustomLink from './CustomLink';
 const Navber = () => {
 
     const listMenu = <>
-        <li><CustomLink className='font-medium' to="/home">Todo</CustomLink></li>
-        <li><CustomLink className='font-medium' to="/completeTask">Complete Task</CustomLink></li>
-        <li><CustomLink className='font-medium' to="/calender">Calender</CustomLink></li>
+        <li><CustomLink as={Link} className='font-medium' to="/home">Todo</CustomLink></li>
+        <li><CustomLink as={Link} className='font-medium' to="/completeTask">Complete Task</CustomLink></li>
+        <li><CustomLink as={Link} className='font-medium' to="/calender">Calender</CustomLink></li>
     </>
     return (
         <div className="navbar bg-purple-500 text-white px-5 sm:pr-20 sm:pl-16">

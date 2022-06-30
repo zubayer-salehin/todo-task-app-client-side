@@ -23,7 +23,7 @@ const AddTask = () => {
     const handleTaskAdd = (e) => {
         e.preventDefault();
         const task = e.target.task.value;
-        if (task) {
+        if (task || e.code === "Enter") {
             fetch("https://stormy-dawn-97117.herokuapp.com/addTask", {
                 method: 'POST',
                 headers: {
