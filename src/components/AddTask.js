@@ -38,7 +38,7 @@ const AddTask = () => {
                     toast.success(`Task Added`);
                 })
         } else {
-            toast.warning("Please Fill the Task");
+            toast.warning("Please Fill the Task", { autoClose: 2000 });
         }
     }
 
@@ -50,7 +50,7 @@ const AddTask = () => {
             .then(data => {
                 if (data.acknowledged) {
                     setTaskdeletecount(taskdeletecount + 1)
-                    toast.success("Task Successfully Deleted");
+                    toast.success("Task Successfully Deleted", { autoClose: 2000 });
                 }
             })
     }
@@ -89,7 +89,7 @@ const AddTask = () => {
             .then(response => response.json())
             .then(data => {
                 setTaskCount(taskcount + 1);
-                toast.success("Task completed");
+                toast.success("Task completed", { autoClose: 2000 });
             })
 
         fetch(`https://stormy-dawn-97117.herokuapp.com/deleteTask/${id}`, {

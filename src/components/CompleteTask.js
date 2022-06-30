@@ -23,7 +23,7 @@ const CompleteTask = () => {
             .then(data => {
                 if (data.acknowledged) {
                     setCompleteTaskdeletecount(completeTaskdeletecount + 1)
-                    toast.success("Completed Task Deleted");
+                    toast.success("Completed Task Deleted", { autoClose: 2000 });
                 }
             })
     }
