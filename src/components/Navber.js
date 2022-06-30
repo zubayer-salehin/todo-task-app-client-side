@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CustomLink from './CustomLink';
 
 const Navber = () => {
 
     const listMenu = <>
-        <li><Link className='font-medium' to="/home">Todo</Link></li>
-        <li><Link className='font-medium' to="/completeTask">Complete Task</Link></li>
-        <li><Link className='font-medium' to="/calender">Calender</Link></li>
+        <li><CustomLink className='font-medium' to="/home">Todo</CustomLink></li>
+        <li><CustomLink className='font-medium' to="/completeTask">Complete Task</CustomLink></li>
+        <li><CustomLink className='font-medium' to="/calender">Calender</CustomLink></li>
     </>
     return (
         <div className="navbar bg-purple-500 text-white px-5 sm:pr-20 sm:pl-16">

@@ -7,6 +7,7 @@ import Navber from './components/Navber';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from './components/Footer';
+import { Navigate } from 'react-big-calendar';
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
     <div>
       <Navber></Navber>
       <Routes>
-        <Route path="/" element={<AddTask />} />
+      <Route path='/' element={<Navigate to="/home"></Navigate>}></Route>
         <Route path="/home" element={<AddTask />} />
         <Route path="/completeTask" element={<CompleteTask />} />
         <Route path="/calender" element={<Calender />} />
