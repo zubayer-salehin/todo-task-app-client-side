@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import SingleTask from './SingleTask';
 import { toast } from 'react-toastify';
-import Footer from './Footer';
 
 
 const AddTask = () => {
